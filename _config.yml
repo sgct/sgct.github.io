@@ -2,7 +2,7 @@ remote_theme: pmarsceill/just-the-docs
 
 title: SGCT
 description: Simple Graphics Cluster Toolkit
-#logo: "/assets/images/logo.png"
+logo: "/assets/sgct-logo.png"
 
 search_tokenizer_separator: /[\s/]+/
 #heading_anchors: true
