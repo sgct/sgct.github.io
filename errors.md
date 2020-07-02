@@ -35,9 +35,6 @@ SGCT uses unique error codes in the case when an unrecoverable error occurs that
 ### 1011
 > \[Capture\] Screenshot ranges beginning has to be before the end
 
-### 1012
-> \[Capture\] Exactly none or both range values have to be specified
-
 ### 1020
 > \[Settings\] Swap interval must not be negative
 
