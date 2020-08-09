@@ -544,9 +544,12 @@ SGCT uses unique error codes in the case when an unrecoverable error occurs that
 > \[XML Parsing\] / Cannot find master address
 
 ### 6085
-> \[XML Parsing\] / Unknown color bit depth %s
+> \[XML Parsing\] / Unknown stereo mode %s
 
 ### 6086
+> \[XML Parsing\] / Unknown color bit depth %s
+
+### 6087
 > \[XML Parsing\] / Unknown resolution %s for cube map
 
 ### 6090
