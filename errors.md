@@ -144,7 +144,13 @@ SGCT uses unique error codes in the case when an unrecoverable error occurs that
 > \[Window\] Cannot use an MPCDI file and explicitly add viewports simultaneously
 
 ### 1107
-> \[Window\] First window cannot be blitted into as there is no source
+> \[Window\] Window id must be non-negative and unique [%i used multiple times]
+
+### 1108
+> \[Window\] Tried to configure window %i to be blitted from window %i, but no such window was specified
+
+### 1109
+> \[Window\] Window %i tried to blit from itself, which cannot work
 
 ### 1110
 > \[Node\] Node address must not be empty
