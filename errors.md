@@ -211,6 +211,12 @@ SGCT uses unique error codes in the case when an unrecoverable error occurs that
 ### 2031
 > \[OBJ\] Vertex count doesn't match number of texture coordinates
 
+### 2032
+> \[OBJ\] Faces in mesh '%s' referenced vertices that were undefined
+
+### 2033
+> \[OBJ\] Faces in mesh '%s' are using relative index positions that are unsupported
+
 ### 2040
 > \[Paul Bourke\] Failed to open warping mesh file
 
