@@ -7,6 +7,9 @@ parent: Configuration Files
 This XML specifies a single window that is used to render content into.  There can be an arbitrary(*-ish*) number of windows for each node and they all will be created and initialized at start time.  Each window has at least one [Viewport](viewport) that specifies exactly where in the window the rendering occurs with which parameters.
 
 # Attributes
+`id` *optional* \[ int \]
+> The numerical identifier of this window. By default windows are given numerical value equal to their position in the node-1, meaning that the first window of a node will have the id `0`, the second window id `1`, etc.  This value can be used to overwride this.  It is not possible to give the same ID to two different windows.
+
 `name` *optional* \[ string \]
 > The name of the window.  This is also used as the title of the window if window decorations are enabled.  The default name for a window if this value is not specified is "SGCT Node: %i (%s)" with `%i` = the address of this node and `%s` either "server" or "client", depending on whether the current node is the server or the client in the cluster.
 
@@ -63,8 +66,8 @@ This XML specifies a single window that is used to render content into.  There c
 `draw3D` *optional* \[ boolean \]
 > Determines whether the `draw` callback should be called for viewports in this window.  The default value is `true`.
 
-`blitPreviousWindow` *optional* \[ boolean \]
-> If this value is set to `true`, the contents of the previous window are blitted into this window before calling its own rendering.  A common use-case for this are GUI windows that want to show the 3D rendering but not take the performance impact of rendering an expensive scene twice.  Instead of rendering the 3D scene, a GUI window would set `draw3D` to `false` and this attribute to `true`, meaning that the contents of the previous window are copied and then the 2D UI will be rendered on top of the blitted content.  The previous window is the one that is specified just before this window in the XML file itself.  This also means that the first window in the configuration file can not has this value set to `true`.  The default value is `false`.
+`blitWindowId` *optional* \[ int \]
+> If this value is specified, the 3D contents of a different window are blitted (=copied) into this window before calling its own rendering.  A common use-case for this are GUI windows that want to show the 3D rendering but not take the performance impact of rendering an expensive scene twice.  Instead of rendering the 3D scene, a GUI window would set `draw3D` to `false` and this attribute to the id of the main window, meaning that the contents of that other window are copied and then the 2D UI will be rendered on top of the blitted content.  Unless specified otherwise, a window's id is its position in the XML file inside a node, starting at 0.  So the first window of a node will have the id `0`, the second `1`, etc.  The default value is `-1` which means taht not blitting is performed.
 
 `monitor` *optional* \[ integer >= -1 \]
 > Determines which monitor should be used for the exclusive fullscreen in case `fullscreen` is set to `true`.  The list of monitors on the system are zero-based and range between 0 and the number of monitors - 1.  For this attribute, the special value `-1` can be used to denote that the primary monitor as defined by the operating system should be used, regardless of its index.  The default value is `-1`.
