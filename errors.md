@@ -455,12 +455,9 @@ SGCT uses unique error codes in the case when an unrecoverable error occurs that
 > \[Network\] Failed to uncompress data for connection %i: %s // Data Transfer
 
 ### 5013
-> \[Network\] TCP connection %i closed: %s
-
-### 5014
 > \[Network\] TCP connection %i receive failed: %s
 
-### 5015
+### 5014
 > \[Network\] Send data failed: %s
 
 ### 5020
