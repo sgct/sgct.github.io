@@ -36,6 +36,9 @@ This XML specifies a single window that is used to render content into.  There c
 `autoiconify` *optional* \[ boolean \]
 > Determines whether an exclusive fullscreen window will be automatically iconified if it loses focus.  This value will be ignored if the `fullscreen` value is not set or if it is `false`.  The default value for this setting is `false`.
 
+`hideMouseCursor` *optional* \[ boolean \]
+> If this value is set to `true`, the mouse cursor will never be visible above this window.  The default value for this setting is `false`.
+
 `floating` *optional* \[ boolean \]
 > Indicates whether the window is floating, meaning that it is rendered by the operating system always on top of other windows.  The default value is `false`.
 
