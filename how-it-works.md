@@ -52,10 +52,10 @@ This stage distributes the shared data from the server to the clients.  The clie
 As the data is transferred as is, it is important to make sure that the data serialized is [POD](https://en.cppreference.com/w/cpp/named_req/PODType), or the behavior might be surprising when decoding the data.  Additionally, be aware of serializing any data structure that contains pointers to other parts in memory.  Just serializing the pointer value itself is most definitely not what you would want to do as that pointer will be invalid on the client machines.  In those cases, it is better to use your own way of referring to objects, for example through the use of identifiers.
 
 #### Encode
-This callback is only executed on the server and the application is responsible to fill the buffer provided by the `SharedData` singleton.  All variables that are provided to that class will then be available in the client's `Decode` callback.
+This callback is only executed on the server and the application is responsible to fill the buffer provided by the `SharedData` singleton.  All variables that are provided to that class will then be available in the client's `Decode` callback.  This function is called on a separate thread from all other functions.
 
 #### Decode
-This callback will be called only on the clients at which time they can read the buffer provided by the `SharedData` singleton.  Please note that the variables have to be accessed in the same order in which the `Encode` callback has added them to the buffer.
+This callback will be called only on the clients at which time they can read the buffer provided by the `SharedData` singleton.  Please note that the variables have to be accessed in the same order in which the `Encode` callback has added them to the buffer.  This function is called on a separate thread from all other functions.
 
 
 ### Post Synchronization Pre Draw (PostSyncPreDraw)
